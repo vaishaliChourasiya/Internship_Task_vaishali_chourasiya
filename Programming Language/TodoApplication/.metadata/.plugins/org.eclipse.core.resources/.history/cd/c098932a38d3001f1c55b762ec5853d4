@@ -1,0 +1,77 @@
+package demo1;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Bl {
+	Connect ob=new Connect();
+	Scanner sc=new Scanner(System.in);
+	public void add() throws SQLException, ClassNotFoundException{
+	Connection con=	ob.getConnection();
+		System.out.println("Enter title and status");
+		String title=sc.next();
+		String status=sc.next();
+		String sql="insert into todo(title,title_status)values(?,?)";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1, title);
+		ps.setString(2, status);
+		int i=ps.executeUpdate();
+		if(i>0) {
+			System.out.println("Inserted Successfully");
+		}
+		else {
+			System.out.println("Not Inserted Successfully");
+		}
+		
+	}
+	public void update()throws SQLException,ClassNotFoundException {
+		
+		Connection con=	ob.getConnection();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		System.out.println("Enter title and status to update");
+		String title=sc.next();
+		String status=sc.next();
+		String sql="update todo set title=? and title_status=? where id=?";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1, id);
+		ps.setString(2, title);
+		ps.setString(3, status);
+		int i=ps.executeUpdate();
+		if(i>0) {
+			System.out.println("updated Successfully");
+		}
+		else {
+			System.out.println("Not updated Successfully");
+		}
+	}
+	public void delete() throws SQLException {
+		Connection con=ob.getConnection();
+		System.out.println("enter Id to delete a record");
+		int id=sc.nextInt();
+		String sql="delete from todo where id=?";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(0, id);
+		int i=ps.executeUpdate();
+		if(i>0) {
+			System.out.println("delete a record successfully");
+			
+		}
+		else {
+			System.out.println("failed to deleted");
+		}
+	}
+	public void listAll() throws SQLException {
+		Connection con=ob.getConnection();
+		String sql="select * from todo";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		if(rs.next()) {
+			System.out.println("ID \t\t\t\t\t Title\t\t\t\t Title_status");
+			System.out.println();
+		}
+	}
+}

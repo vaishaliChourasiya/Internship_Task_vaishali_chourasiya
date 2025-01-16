@@ -1,0 +1,33 @@
+package demo1;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Bl {
+	Connect con=new Connect();
+	public void add() throws SQLException, ClassNotFoundException{
+		Connection ob=con.conn();
+		String sql="insert into todo(title,title_status)values(?,?)";
+		PreparedStatement ps=ob.prepareStatement(sql);
+		
+		int i=ps.executeUpdate();
+		if(i>0) {
+			System.out.println("Inserted Successfully");
+		}
+		else {
+			System.out.println("Not Inserted Successfully");
+		}
+		
+	}
+	public void update() {
+		
+		
+	}
+	public void delete() {
+		
+	}
+	public void listAll() {
+		
+	}
+}

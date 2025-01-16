@@ -1,0 +1,17 @@
+package demo1;
+
+public class Bl {
+
+	public void add() {
+		
+	}
+	public void update() {
+		
+	}
+	public void delete() {
+		
+	}
+	public void listAll() {
+		
+	}
+}

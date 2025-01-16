@@ -1,0 +1,95 @@
+package demo1;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Bl {
+	Connect ob=new Connect();
+	Scanner sc=new Scanner(System.in);
+	public void add() throws SQLException, ClassNotFoundException{
+	Connection con=	ob.getConnection();
+		System.out.println("Enter title and status");
+		String title=sc.next();
+		String status=sc.next();
+		String sql="insert into todo(title,title_status)values(?,?)";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1, title);
+		ps.setString(2, status);
+		int i=ps.executeUpdate();
+		if(i>0) {
+			System.out.println("Inserted Successfully");
+		}
+		else {
+			System.out.println("Not Inserted Successfully");
+		}
+		
+	}
+	public void update() throws ClassNotFoundException, SQLException {
+		updateTask ob=new updateTask();
+		int ch;
+		do {
+		System.out.println("enter choice to update");
+		System.out.println("press 1. for update all");
+		System.out.println("press 2. for update title");
+		System.out.println("press 3. for update Status");
+		ch=sc.nextInt();
+		switch(ch) {
+		case 1:ob.updateAll();
+			break;
+		case 2:
+				ob.updateTitle();
+				break;
+		case 3:
+				ob.UpdateStatus();
+				break;
+		case 4:
+				System.out.println("Exit from update");
+				break;
+		default:
+			System.out.println("enter valid choice for update");
+		}}while(ch!=4);
+		
+	}
+	public void delete() throws SQLException,ClassNotFoundException {
+		DeleteTask ob=new DeleteTask();
+		int ch;
+		do {
+		System.out.println("enter choice to update");
+		System.out.println("press 1. for  delte By Id");
+		System.out.println("press 2. for delete by  title");
+		System.out.println("press 3. for delete by Status");
+		System.out.println("press 4. for delete by delete All");
+		ch=sc.nextInt();
+		switch(ch) {
+		case 1:ob.deleteById();
+			break;
+		case 2:
+				ob.deleteTitle();
+				break;
+		case 3:
+				ob.deleteByStatus();
+				break;
+		case 4: ob.deleteAll();
+			break;
+		case 5:
+				System.out.println("Exit from update");
+				break;
+		default:
+			System.out.println("enter valid choice for update");
+		}}while(ch!=4);
+		
+	}
+	public void listAll() throws SQLException {
+		Connection con=ob.getConnection();
+		String sql="select * from todo";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		if(rs.next()) {
+			System.out.println("ID \t\t\t\t\t Title\t\t\t\t Title_status");
+			System.out.println(rs.getInt(1)+"\t\t\t\t"+rs.getString(2)+"\t\t\t\t"+ rs.getString(3));
+		}
+	}
+}

@@ -1,0 +1,23 @@
+package demo1;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class DeleteTask {
+	public void deleteById() {
+	Connection con=ob.getConnection();
+	System.out.println("enter Id to delete a record");
+	int id=sc.nextInt();
+	String sql="delete from todo where id=?";
+	PreparedStatement ps=con.prepareStatement(sql);
+	ps.setInt(1, id);
+	int i=ps.executeUpdate();
+	if(i>0) {
+		System.out.println("delete a record successfully");
+		
+	}
+	else {
+		System.out.println("failed to deleted");
+	}
+	}
+}

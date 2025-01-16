@@ -1,0 +1,19 @@
+package demo1;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Connect  {
+	public void connect() {
+try {
+	String url="jdbc:mysql:localhost:3306/newsfeedapplication";
+	String username="root";
+	String password="root";
+	Connection con=DriverManager.getConnection(url,username,password);
+}
+catch(Exception e) {
+	e.printStackTrace();
+}
+}
+}
