@@ -14,11 +14,9 @@ public void selectAll() throws SQLException,ClassNotFoundException {
 	String sql="select * from todo";
 	PreparedStatement ps=con.prepareStatement(sql);
 	ResultSet rs=ps.executeQuery();
-	System.out.println("ID \t\t\t\t\t Title\t\t\t\t Title_status");
-	while(rs.next()) {
-		
-		System.out.print(rs.getInt(1)+"\t\t\t\t"+rs.getString(2)+"\t\t\t\t"+ rs.getString(3));
-		System.out.println();
+	if(rs.next()) {
+		System.out.println("ID \t\t\t\t\t Title\t\t\t\t Title_status");
+		System.out.println(rs.getInt(1)+"\t\t\t\t"+rs.getString(2)+"\t\t\t\t"+ rs.getString(3));
 	}
 }
 
