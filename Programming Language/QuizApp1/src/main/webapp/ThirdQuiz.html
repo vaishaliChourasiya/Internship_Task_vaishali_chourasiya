@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Question</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      font-size: 1.5rem;
+      font-weight: bold; /* Makes the question bold */
+      color: black; /* Sets the question text color to black */
+    }
+    .form-check {
+      margin-bottom: 15px;
+    }
+    .btn-custom {
+      font-size: 1rem; /* Smaller button size */
+      padding: 8px 16px; /* Smaller padding */
+      border-radius: 5px;
+    }
+    .btn-prev {
+      background-color: #007bff; /* Blue button color */
+      color: white;
+    }
+    .btn-prev:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+    .btn-next {
+      background-color: #007bff; /* Blue button color */
+      color: white;
+    }
+    .btn-next:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between; /* Buttons will be placed side by side */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <form action="Third">
+      <h3 class="question">Which method can be used to find the length of a string in Java?</h3>
+
+      <div class="form-check">
+        <input type="radio" class="form-check-input" name="third" value="length()" id="lengthOption">
+        <label class="form-check-label" for="lengthOption" >a. length()</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" name="third" value="getLength()" id="getLengthOption">
+        <label class="form-check-label" for="getLengthOption" >b. getLength()</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" name="third" value="size()" id="sizeOption">
+        <label class="form-check-label" for="sizeOption" >c. size()</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" name="third" value="getSize()" id="getSizeOption">
+        <label class="form-check-label" for="getSizeOption" >d. getSize()</label>
+      </div>
+
+      <div class="btn-row">
+        <a href="SecondQuiz.html" class="btn btn-custom btn-prev">Previous</a>
+        <input type="submit" value="Save & Next" class="btn btn-custom btn-next">
+      </div>
+    </form>
+  </div>
+
+  <!-- Include Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

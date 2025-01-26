@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Rules</title>
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+ 
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #para {
+      font-size: 1.8rem;
+      color: #007bff;
+    }
+    ol {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .terms-checkbox {
+      font-size: 1.1rem;
+    }
+    .btn-custom {
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      margin-top: 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn-custom-exit {
+      background-color: #dc3545;
+      color: white;
+    }
+    .btn-custom-exit:hover {
+      background-color: #c82333;
+    }
+    .btn-custom-continue {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-custom-continue:hover {
+      background-color: #218838;
+    }
+    hr {
+      border-color: #dee2e6;
+    }
+      .btn-prev:hover {
+      background-color: #0056b3; 
+    }
+    .btn-next {
+      background-color: #007bff; 
+      color: white;
+    }
+    .btn-next:hover {
+      background-color: #0056b3; 
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between; 
+    }
+  </style>
+</head>
+<body>
+	<form action="FirstQuiz.html">
+  <div class="container">
+    <p id="para" class="text-center">Some Rules of this Quiz</p>
+
+    <hr>
+    <ol>
+      <li>You will have only 15 seconds for each question.</li>
+      <li>You cannot select multiple options.</li>
+      <li>You cannot select any options once time runs out.</li>
+      <li>You cannot exit the quiz while you are playing.</li>
+      <li>You will get points based on the correct answer.</li>
+      <li>No negative marking for wrong answers.</li>
+    </ol>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="termsCheckbox" required>
+      <label class="form-check-label terms-checkbox" for="termsCheckbox">I accept the terms and conditions</label>
+    </div>
+
+    <hr>
+
+    <div class="text-center">
+      <a href="Home.html" class="btn btn-custom btn-custom-exit">Exit Quiz</a>&emsp;
+      <input type="submit" value="continue" class="btn btn-custom btn-next"></input>
+    </div>
+  </div>
+</form>
+ 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
