@@ -18,7 +18,8 @@ WHERE ri.rider_id IS NULL;
 select count(d.driver_id),d.first_name,d.last_name,sum(amount) from drivers d inner join rides r on d.driver_id=r.driver_id inner join payments p on p.ride_id= r.ride_id
 where r.ride_status="completed" group by d.driver_id;
 
-5.Retrieve the most recent ride for each rider. select * from rides order by ride_date desc;
+5.Retrieve the most recent ride for each rider. 
+select * from rides order by ride_date desc;
 
 6.Count the number of rides taken in each city.
 SELECT r.first_name, r.last_name, r.city, COUNT(ri.ride_id) AS RideCount
