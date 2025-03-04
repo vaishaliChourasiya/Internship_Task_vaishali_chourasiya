@@ -1,0 +1,38 @@
+package HB.HBHQLCRUD;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Service {
+	
+	Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=conf.buildSessionFactory();
+	Session session=sf.openSession();
+	public void add() {
+		System.out.println("Hql not support insert operation");
+		
+	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

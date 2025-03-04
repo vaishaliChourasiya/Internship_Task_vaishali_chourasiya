@@ -1,0 +1,6 @@
+package HB.HBMapping.EmbeddingObject;
+
+public class Certificate {
+	private int cId;
+	private String Cname;
+}

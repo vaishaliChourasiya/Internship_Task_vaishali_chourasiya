@@ -1,0 +1,5 @@
+package com.onetoone.AuthorBook;
+
+public class Author {
+
+}

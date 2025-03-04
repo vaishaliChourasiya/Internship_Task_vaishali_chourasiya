@@ -1,0 +1,78 @@
+package com.NativeQuery.Crud;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
+
+import HB.NativeQuery.Employee;
+
+public class SelectQuery {
+	Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=conf.buildSessionFactory();
+	Session session=sf.openSession();
+	Scanner sc=new Scanner(System.in);
+
+	public void selectAll() {
+		session.beginTransaction();
+		String sql="select * from customer";
+		NativeQuery q=session.createNativeQuery(sql);
+		q.addEntity(Customer.class);
+		List<Customer> ls=q.list();
+		for(Customer e:ls) {
+			System.out.println(e);
+		}
+		
+	}
+
+	public void selectById() {
+		
+		session.beginTransaction();
+		String sql="select * from customer";
+		NativeQuery q=session.createNativeQuery(sql);
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		q.setParameter(1,id);
+		q.addEntity(Customer.class);
+		List<Customer> ls=q.list();
+		for(Customer e:ls) {
+			System.out.println(e);
+		}
+	}
+
+	public void selectByName() {
+		session.beginTransaction();
+		String sql="select * from customer";
+		NativeQuery q=session.createNativeQuery(sql);
+		System.out.println("enter name");
+		String name=sc.next();
+		q.setParameter(1,name);
+		q.addEntity(Customer.class);
+		List<Customer> ls=q.list();
+		for(Customer e:ls) {
+			System.out.println(e);
+		}
+		
+		
+	}
+
+	public void selectByCity() {
+		
+		session.beginTransaction();
+		String sql="select * from customer where city=?";
+		NativeQuery q=session.createNativeQuery(sql);
+		System.out.println("enter city");
+		String city=sc.next();
+		q.setParameter(1,city);
+		q.addEntity(Customer.class);
+		List<Customer> ls=q.list();
+		for(Customer e:ls) {
+			System.out.println(e);
+		}
+	}
+
+}

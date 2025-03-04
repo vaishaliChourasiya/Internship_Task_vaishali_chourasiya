@@ -1,0 +1,25 @@
+package CrudHql;
+
+public class UpdateQuery {
+
+	public void updateName() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateCity() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateDob() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateContact() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

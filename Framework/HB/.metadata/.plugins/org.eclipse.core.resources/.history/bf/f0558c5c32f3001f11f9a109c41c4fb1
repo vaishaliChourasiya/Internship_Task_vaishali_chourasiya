@@ -1,0 +1,32 @@
+package HB.HBHQLCRUD;
+
+public class Service {
+	
+
+	public void add() {
+		
+		
+	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

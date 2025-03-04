@@ -1,0 +1,31 @@
+package HB.HBMapping.EmbeddingObject;
+
+public class Certificate {
+	private int cId;
+	private String Cname;
+	public Certificate() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Certificate(String cname) {
+		super();
+		Cname = cname;
+	}
+	public int getcId() {
+		return cId;
+	}
+	public void setcId(int cId) {
+		this.cId = cId;
+	}
+	public String getCname() {
+		return Cname;
+	}
+	public void setCname(String cname) {
+		Cname = cname;
+	}
+	@Override
+	public String toString() {
+		return "Certificate [cId=" + cId + ", Cname=" + Cname + "]";
+	}
+	
+}

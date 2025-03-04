@@ -1,0 +1,52 @@
+package HB.NativeQuery;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
+
+public class Service {
+	Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=conf.buildSessionFactory();
+	Session session=sf.openSession();
+	Scanner sc=new Scanner(System.in);
+	Employee e=new Employee();
+	public void add() {
+		session.beginTransaction();
+		String q="insert into employee_details(name,city,salary)values(?,?,?)";
+	NativeQuery query=session.createNativeQuery(q);
+	System.out.println("enter name");
+	String name=sc.next();
+	System.out.println("enter city");
+	String city=sc.next();
+	System.out.println("enter salary");
+	int salary=sc.nextInt();
+	query.setParameter(1, name);
+	query.setParameter(2, city);
+	query.setParameter(3, salary);
+	query.executeUpdate();
+	session.getTransaction().commit();
+		
+	}
+	public void update() {
+		
+		session.beginTransaction();
+		String sql="update ";
+	}
+	public void delete() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void selectAll() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

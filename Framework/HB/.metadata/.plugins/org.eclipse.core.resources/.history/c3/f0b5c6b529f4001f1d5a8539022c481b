@@ -1,0 +1,10 @@
+package HB.HBMapping.GetLoad;
+
+public class Get {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

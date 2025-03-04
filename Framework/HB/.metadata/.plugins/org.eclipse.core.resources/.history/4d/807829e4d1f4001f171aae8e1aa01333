@@ -1,0 +1,66 @@
+package com.NativeQuery.Crud;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
+
+public class Service {
+	Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=conf.buildSessionFactory();
+	Session session=sf.openSession();
+	Scanner sc=new Scanner(System.in);
+	UpdateQuery uq=new UpdateQuery();
+	public void insert() {
+		session.beginTransaction();
+		String sql="insert into customer(name,city,email,contact)values(?,?,?,?)";
+		NativeQuery query=session.createNativeQuery(sql);
+		System.out.println("enter name");
+		String name=sc.next();
+		System.out.println("enter city");
+		String city=sc.next();
+		System.out.println("enter email");
+		String email=sc.next();
+		System.out.println("enter contact");
+		String contact=sc.next();
+		query.setParameter(1,name);
+		query.setParameter(2, city);
+		query.setParameter(3, email);
+		query.setParameter(4, contact);
+		query.executeUpdate();
+		session.getTransaction().commit();
+	}
+	public void update() {
+		System.out.println("Press 1. for update name");
+		System.out.println("Press 2. for update city");
+		System.out.println("Press 3. for update email");
+		System.out.println("Press 4. for update contact");
+		System.out.println("Enter your choice");
+		int ch=sc.nextInt();
+		switch(ch) {
+		case 1: uq.updateName();
+			break;
+		case 2:	uq.updateCity();
+			break;
+		case 3:	uq.updateEmail();
+			break;
+		case 4:	uq.updateContact();
+			break;
+		default:
+			System.out.println("Invalid choice");
+		}
+		
+	}
+	public void delete() {
+		
+		
+	}
+	public void select() {
+	
+		
+	}
+	
+
+}

@@ -1,0 +1,42 @@
+package com.onetomany.AuthorBook.Unidirectional;
+
+import java.util.List;
+
+public class Author1 {
+	private int a_id;
+	private String name;
+	private List<Book1> book;
+	public Author1() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Author1(String name, List<Book1> book) {
+		super();
+		this.name = name;
+		this.book = book;
+	}
+	public int getA_id() {
+		return a_id;
+	}
+	public void setA_id(int a_id) {
+		this.a_id = a_id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public List<Book1> getBook() {
+		return book;
+	}
+	public void setBook(List<Book1> book) {
+		this.book = book;
+	}
+	@Override
+	public String toString() {
+		return "Author1 [a_id=" + a_id + ", name=" + name + ", book=" + book + "]";
+	}
+	
+
+}

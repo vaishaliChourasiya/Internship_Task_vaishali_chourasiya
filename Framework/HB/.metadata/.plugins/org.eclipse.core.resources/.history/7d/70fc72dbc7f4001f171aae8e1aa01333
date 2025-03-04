@@ -1,0 +1,33 @@
+package HB.Criteria;
+
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaQuery;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+        SessionFactory sf=conf.buildSessionFactory();
+        Session session=sf.openSession();
+        
+        System.out.println("session");
+//        Criteria c=session.createCriteria(UserDetail.class);
+//        System.out.println(c);
+//       List<UserDetail>ul= c.list();
+//        for(UserDetail u:ul) {
+//        	System.out.println(u);
+//        	
+//        }
+//        
+       
+    }
+}

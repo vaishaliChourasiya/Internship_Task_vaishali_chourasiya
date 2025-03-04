@@ -1,0 +1,97 @@
+package HqlCrudOperation.Impl;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import HqlCrudOperation.Interface.UpdateInf;
+
+public class updateImp  implements UpdateInf{
+	Scanner sc=new Scanner(System.in);
+	@Override
+	public void updateName(Session s, Transaction tx) {
+		String query="update User1 set name=:name where id=:id";
+		System.out.println("enter name to update");
+		String name=sc.next();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("name", name);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();
+	}
+
+	@Override
+	public void updateCity(Session s, Transaction tx) {
+		String query="update User1 set city=:city where id=:id";
+		System.out.println("enter city to update");
+		String city=sc.next();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("city", city);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();
+		
+	}
+
+	@Override
+	public void updateEmail(Session s, Transaction tx) {
+		String query="update User1 set email=:email where id=:id";
+		System.out.println("enter email to update");
+		String email=sc.next();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("email", email);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();
+		
+	}
+
+	@Override
+	public void updateContact(Session s, Transaction tx) {
+		String query="update User1 set contact=:contact where id=:id";
+		System.out.println("enter contact to update");
+		String contact=sc.next();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("contact", contact);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();	
+	}
+
+	@Override
+	public void updateDob(Session s, Transaction tx) throws ParseException {
+		String query="update User1 set dob=:dob where id=:id";
+		System.out.println("enter dob to update");
+		String dob=sc.next();
+		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+		Date date=sdf.parse(dob);
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("date", date);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();
+		
+	}
+
+	@Override
+	public void updateAll(Session s, Transaction tx) {
+		
+		
+	}
+
+}

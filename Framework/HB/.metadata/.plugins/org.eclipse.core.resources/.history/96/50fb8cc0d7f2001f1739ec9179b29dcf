@@ -1,0 +1,42 @@
+package CustomerAddress;
+
+public class Address {
+
+	private int addressId;
+	private String city;
+	private Customer customer;
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Address(int addressId, String city, Customer customer) {
+		super();
+		this.addressId = addressId;
+		this.city = city;
+		this.customer = customer;
+	}
+	public int getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	@Override
+	public String toString() {
+		return "Address [addressId=" + addressId + ", city=" + city + ", customer=" + customer + "]";
+	}
+	
+	
+}

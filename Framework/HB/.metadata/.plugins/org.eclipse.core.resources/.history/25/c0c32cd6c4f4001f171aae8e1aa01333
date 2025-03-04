@@ -1,0 +1,16 @@
+package HB.Criteria;
+
+public class UserDetail {
+	private int id;
+	private String name;
+	private String contact;
+	private String city;
+	private String gender;
+	private String status;
+	
+	public UserDetail() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

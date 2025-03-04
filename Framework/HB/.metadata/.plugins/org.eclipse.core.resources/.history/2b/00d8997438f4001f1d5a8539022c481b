@@ -1,0 +1,11 @@
+package com.onetomany.AuthorBook;
+
+import java.util.List;
+
+public class Author1 {
+	private int a_id;
+	private String name;
+	private List<Book1> book;
+	
+
+}

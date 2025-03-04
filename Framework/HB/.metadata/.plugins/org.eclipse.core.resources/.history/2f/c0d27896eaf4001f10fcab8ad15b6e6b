@@ -1,0 +1,5 @@
+package HqlCrudOperation.Impl;
+
+public class CrudImp {
+
+}

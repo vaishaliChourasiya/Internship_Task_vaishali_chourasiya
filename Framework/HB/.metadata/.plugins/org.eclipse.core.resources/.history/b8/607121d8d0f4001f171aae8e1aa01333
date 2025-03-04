@@ -1,0 +1,27 @@
+package com.NativeQuery.Crud;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class UpdateQuery {
+	
+	Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=conf.buildSessionFactory();
+	Session session=sf.openSession();
+	Scanner sc=new Scanner(System.in);
+	public void updateName() {
+		
+	}
+	public void updateCity() {
+		
+	}
+	public void updateContact() {
+		
+	}
+	public void updateEmail() {
+		
+	}
+}

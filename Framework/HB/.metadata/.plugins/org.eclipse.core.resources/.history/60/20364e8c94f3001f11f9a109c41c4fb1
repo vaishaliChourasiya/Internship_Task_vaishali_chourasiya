@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!-- Define the User class mapping to the 'user' table -->
+    <class name="CrudHql.User" table="user">
+        
+        <!-- Define the primary key for the User class -->
+        <id name="id" column="id">
+            <generator class="identity"/> <!-- or use sequence depending on your DB -->
+        </id>
+
+        <!-- Define the properties (fields) of the User class -->
+        <property name="name" column="name"/>
+        <property name="city" column="city"/>
+        <property name="contact" column="contact"/>
+        <property name="dob" column="dob"/>
+        
+    </class>
+
+</hibernate-mapping>

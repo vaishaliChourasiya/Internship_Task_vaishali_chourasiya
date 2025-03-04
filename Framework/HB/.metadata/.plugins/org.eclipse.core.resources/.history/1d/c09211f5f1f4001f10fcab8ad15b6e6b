@@ -1,0 +1,13 @@
+package HqlCrudOperation.Interface;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public interface UpdateInf {
+	void updateName(Session s,Transaction tx);
+	void updateCity(Session s,Transaction tx);
+	void updateEmail(Session s,Transaction tx);
+	void updateContact(Session s,Transaction tx);
+	void updateDob(Session s, Transaction tx);
+	void updateAll(Session s,Transaction tx);
+}

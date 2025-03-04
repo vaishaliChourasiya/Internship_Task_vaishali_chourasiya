@@ -1,0 +1,49 @@
+package CrudHql;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import HB.HBHQLCRUD.Student;
+
+public class SelectQuery {
+	Configuration conf=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=conf.buildSessionFactory();
+	Session session=sf.openSession();
+	Scanner sc=new Scanner(System.in);
+
+	public void selectAll() {
+		session.beginTransaction();
+		String query="from User";
+		Query q=session.createQuery(query);
+		List<User> ob=q.list();
+		for(User s:ob) {
+			System.out.println(s);
+		
+	}
+
+	public void selectById() {
+		
+		
+	}
+
+	public void selectByName() {
+		
+		
+	}
+
+	public void selectByCity() {
+		
+		
+	}
+
+	public void selectByLikePattern() {
+	
+		
+	}
+
+}

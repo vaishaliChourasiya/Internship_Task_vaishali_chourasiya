@@ -1,0 +1,11 @@
+package com.manytomany.EmployeeAddress;
+
+import java.util.List;
+
+public class Employee {
+	private int e_id;
+	private String name;
+	private List<Address> address;
+	
+
+}

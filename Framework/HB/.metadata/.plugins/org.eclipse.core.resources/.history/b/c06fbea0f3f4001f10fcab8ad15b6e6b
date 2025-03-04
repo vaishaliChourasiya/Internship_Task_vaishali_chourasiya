@@ -1,0 +1,57 @@
+package HB.Criteria;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.List;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+
+        // Initialize Hibernate configuration and session factory
+        Configuration conf = new Configuration().configure("hibernate.cfg.xml");
+        SessionFactory sf = conf.buildSessionFactory();
+        Session session = null;
+
+        try {
+            session = sf.openSession();
+            session.beginTransaction();
+            System.out.println("session");
+
+            // Create criteria query
+            Criteria c = session.createCriteria(UserDetail.class);
+            System.out.println(c);
+
+            // Adding restriction (where status = 'active')
+            c.add(Restrictions.eq("status", "active"));
+
+            // Execute the query and retrieve the list of UserDetail objects
+            List<UserDetail> ls = c.list();
+            
+            // Print the results
+            for (UserDetail ud : ls) {
+                System.out.println(ud);
+            }
+
+            // Commit transaction if any changes were made (though no changes are being made here)
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            // In case of an exception, rollback transaction
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            // Close the session to release resources
+            if (session != null) {
+                session.close();
+            }
+            // Close the session factory
+            sf.close();
+        }
+    }
+}

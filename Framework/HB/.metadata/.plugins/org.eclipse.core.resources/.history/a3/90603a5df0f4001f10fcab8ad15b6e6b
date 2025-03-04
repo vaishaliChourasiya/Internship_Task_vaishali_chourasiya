@@ -1,0 +1,39 @@
+package HqlCrudOperation.Impl;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import HqlCrudOperation.Interface.UpdateInf;
+
+public class updateImp  implements UpdateInf{
+
+	@Override
+	public void updateName(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void updateCity(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void updateEmail(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void updateContact(Session s, Transaction tx) {
+				
+	}
+
+	@Override
+	public void updateDob(Session s, Transaction tx) {
+		
+		
+	}
+
+}

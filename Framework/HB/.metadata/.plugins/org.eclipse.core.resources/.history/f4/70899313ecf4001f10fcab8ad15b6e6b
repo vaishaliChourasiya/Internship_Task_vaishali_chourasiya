@@ -1,0 +1,37 @@
+package HqlCrudOperation.Impl;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import HqlCrudOperation.Entity.User;
+import HqlCrudOperation.Interface.CrudInterface;
+
+public class CrudImp implements CrudInterface {
+
+	@Override
+	public void insert(Session s, Transaction tx) {
+		s.beginTransaction();
+		User u=new User( null, null, null, null);
+		
+	}
+
+	@Override
+	public void update(Session s, Transaction tx) {
+	
+		
+	}
+
+	@Override
+	public void delete(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void select(Session s, Transaction tx) {
+		
+		
+	}
+
+	
+}

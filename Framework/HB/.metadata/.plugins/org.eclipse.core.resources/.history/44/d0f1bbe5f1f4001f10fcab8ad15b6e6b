@@ -1,0 +1,65 @@
+package HqlCrudOperation.Impl;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import HqlCrudOperation.Interface.UpdateInf;
+
+public class updateImp  implements UpdateInf{
+	Scanner sc=new Scanner(System.in);
+	@Override
+	public void updateName(Session s, Transaction tx) {
+		String query="update User1 set name=:name where id=:id";
+		System.out.println("enter name to update");
+		String name=sc.next();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("name", name);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();
+	}
+
+	@Override
+	public void updateCity(Session s, Transaction tx) {
+		String query="update User1 set city=:city where id=:id";
+		System.out.println("enter city to update");
+		String city=sc.next();
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		Query q=s.createQuery(query);
+		q.setParameter("city", city);
+		q.setParameter("id",id);
+		q.executeUpdate();
+		s.getTransaction().commit();
+		
+	}
+
+	@Override
+	public void updateEmail(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void updateContact(Session s, Transaction tx) {
+				
+	}
+
+	@Override
+	public void updateDob(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void updateAll(Session s, Transaction tx) {
+		
+		
+	}
+
+}

@@ -1,0 +1,50 @@
+package HqlCrudOperation.Impl;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import HqlCrudOperation.Entity.User;
+import HqlCrudOperation.Interface.CrudInterface;
+
+public class CrudImp implements CrudInterface {
+	Scanner sc=new Scanner(System.in);
+	@Override
+	public void insert(Session s, Transaction tx) {
+		s.beginTransaction();
+		System.out.println("enter name of user");
+		String name=sc.next();
+		System.out.println("enter email of user");
+		String email=sc.next();
+		System.out.println("enter city of user");
+		String city=sc.next();
+		System.out.println("enter contact of user");
+		String contact=sc.next();
+		System.out.println("enter dob of user");
+		String dob=sc.next();
+		User u=new User(null, null, null, null, null);
+		s.save(u);
+		s.getTransaction().commit();
+	}
+
+	@Override
+	public void update(Session s, Transaction tx) {
+	
+		
+	}
+
+	@Override
+	public void delete(Session s, Transaction tx) {
+		
+		
+	}
+
+	@Override
+	public void select(Session s, Transaction tx) {
+		
+		
+	}
+
+	
+}

@@ -1,0 +1,5 @@
+package HqlCrudOperation.Entity;
+
+public class User {
+
+}

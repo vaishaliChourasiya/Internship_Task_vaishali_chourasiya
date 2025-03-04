@@ -1,0 +1,38 @@
+package onetomanymapping.QuestionAnswer;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Answer {
+	@Id
+	private int AnswerId;
+	private String answer;
+	public Answer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Answer(int answerId, String answer) {
+		super();
+		AnswerId = answerId;
+		this.answer = answer;
+	}
+	public int getAnswerId() {
+		return AnswerId;
+	}
+	public void setAnswerId(int answerId) {
+		AnswerId = answerId;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	@Override
+	public String toString() {
+		return "Answer [AnswerId=" + AnswerId + ", answer=" + answer + "]";
+	}
+	
+
+}

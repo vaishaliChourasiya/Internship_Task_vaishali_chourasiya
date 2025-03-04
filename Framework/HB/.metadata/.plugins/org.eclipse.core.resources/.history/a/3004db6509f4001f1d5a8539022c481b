@@ -1,0 +1,30 @@
+package CrudHql;
+
+public class SelectQuery {
+
+	public void selectAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectByName() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectByCity() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectByLikePattern() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "classpath:hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<
+<property id="id"/>
+<property name="name"></property>
+<property name="city"></property>
+<property name="contact"></property>
+<property name="dob"></property>
+
+</hibernate-mapping>

@@ -1,0 +1,5 @@
+package HqlCrudOperation.Interface;
+
+public interface DeleteInf {
+
+}
